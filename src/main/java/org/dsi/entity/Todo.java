@@ -16,7 +16,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ToDo {
+public class Todo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,12 +1,12 @@
 package org.dsi.mapper;
 
-import org.dsi.dto.ToDoDTO;
-import org.dsi.entity.ToDo;
+import org.dsi.dto.TodoDTO;
+import org.dsi.entity.Todo;
 
-public class ToDoMapper {
+public class TodoMapper {
 
-    public static ToDoDTO ToDoToDTO(ToDo toDo) {
-        ToDoDTO toDoDTO = new ToDoDTO();
+    public static TodoDTO todoToDTO(Todo toDo) {
+        TodoDTO toDoDTO = new TodoDTO();
         toDoDTO.setId(toDo.getId());
         toDoDTO.setTitle(toDo.getTitle());
         toDoDTO.setDetails(toDo.getDetails());
@@ -16,8 +16,8 @@ public class ToDoMapper {
         return toDoDTO;
     }
 
-    public static ToDo DTOToToDo(ToDoDTO toDoDTO) {
-        ToDo toDo = new ToDo();
+    public static Todo dtoToTodo(TodoDTO toDoDTO) {
+        Todo toDo = new Todo();
         toDo.setId(toDoDTO.getId());
         toDo.setTitle(toDoDTO.getTitle());
         toDo.setDetails(toDoDTO.getDetails());

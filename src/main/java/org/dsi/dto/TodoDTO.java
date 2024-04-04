@@ -11,7 +11,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ToDoDTO {
+public class TodoDTO {
 
     private Long id;
 
