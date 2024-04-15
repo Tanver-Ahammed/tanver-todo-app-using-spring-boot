@@ -44,6 +44,47 @@
                     </div>
 
                     <div class="col-6">
+                        <div class="form-floating">
+                            <select
+                                    class="form-select"
+                                    type="text"
+                                    id="status"
+                                    name="status"
+                                    th:field="*{status}"
+                                    required="required"
+                            >
+                                <!--<option selected>Open this select menu</option>-->
+                                <option value="A+">Pending</option>
+                                <option value="B+">In Progress</option>
+                                <option value="AB+">Failed</option>
+                                <option value="O+">Done</option>
+                            </select>
+                            <label for="status">Status</label>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <select
+                                    class="form-select"
+                                    type="number"
+                                    id="priority"
+                                    name="priority"
+                                    th:field="*{priority}"
+                                    required="required"
+                            >
+                                <!--<option selected>Open this select menu</option>-->
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <label for="priority">Priority</label>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
                         <button class="btn btn-danger w-100 py-3" type="reset">Cancel</button>
                     </div>
                     <div class="col-6">
