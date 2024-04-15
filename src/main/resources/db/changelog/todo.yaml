@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: todo
+      author: Tanver
+      changes:
+        - createTable:
+            tableName: todo
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: TEXT
+              - column:
+                  name: details
+                  type: TEXT
+              - column:
+                  name: date
+                  type: TIMESTAMP WITHOUT TIME ZONE
+              - column:
+                  name: status
+                  type: TEXT
+        - addAutoIncrement:
+            tableName: todo
+            columnName: id
+            columnDataType: BIGINT

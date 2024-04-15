@@ -36,7 +36,7 @@ public class TodoController {
     @PostMapping("save")
     public String saveTodo(Model model, @ModelAttribute TodoDTO todoDTO) {
         this.todoService.addToDO(todoDTO);
-        return "all-todos";
+        return "redirect:/todo/all";
     }
 
     @GetMapping("/todo/all")

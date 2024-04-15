@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/todo.yaml
+      relativeToChangelogFile: false
