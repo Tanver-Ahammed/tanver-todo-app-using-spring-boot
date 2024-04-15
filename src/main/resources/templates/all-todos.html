@@ -9,6 +9,29 @@
 
 <section>
 
+    <div class="container">
+        <div class="row row-cols-3">
+            <div th:if="${todoDTOS.isEmpty()}">
+                <td colspan="3"> No Todo Available Now!!</td>
+            </div>
+            <div th:each="todoDTO : ${todoDTOS}">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${'Title: ' + todoDTO.title}"></h5>
+                        <p class="card-text" th:text="${'Details: ' + todoDTO.details}"></p>
+                        <p class="card-text" th:text="${'Status: ' + todoDTO.status}"></p>
+                        <p class="card-text" th:text="${'Priority: ' + todoDTO.priority}"></p>
+                        <a th:href="@{${'/todo/update/' + todoDTO.id}}"
+                           class="card-link btn btn-success">Update</a>
+                        <a th:href="@{${'/todo/delete/' + todoDTO.id}}"
+                           class="card-link btn btn-danger">Delete</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br><br>
+        </div>
+    </div>
 
 </section>
 

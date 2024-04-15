@@ -7,10 +7,7 @@ import org.dsi.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,12 +37,19 @@ public class TodoController {
     }
 
     @GetMapping("/todo/all")
-    @ResponseBody
-    public List<TodoDTO> allTodos(Model model) {
+    // @ResponseBody
+    public String allTodos(Model model) {
         List<TodoDTO> todoDTOS = this.todoService.getAllToDos();
-        model.addAttribute("todoDTOs", todoDTOS);
+        model.addAttribute("todoDTOS", todoDTOS);
         // return "all-todos";
-        return todoDTOS;
+        return "all-todos";
+    }
+
+    @GetMapping("/todo/delete/{todoId}")
+    public String deleteTodo(Model model, @PathVariable("todoId") long todoId) {
+        this.todoService.deleteTodo(todoId);
+        // return "all-todos";
+        return "redirect:/todo/all";
     }
 
 }
